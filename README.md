@@ -66,7 +66,7 @@ Here's the order I suggest you approach this material but feel free to jump arou
 
 ### Table Stakes
 
--   [ ] Prototypes
+-   [x] Prototypes
 -   [ ] Bind, Call, Apply
 -   [ ] Closure
 
