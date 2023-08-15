@@ -43,12 +43,19 @@ function listHobbies(...hobbies) {
 
 // HINT: leverage the `call` method to make the following functions work as expected
 
-Function.prototype.myBind = function (context, ...args) {
-  // your code here
+Function.prototype.myBind = function (context) {
+  // const thisObj = this;
+  // this is going to be funcThatNeedsThis
+  return (...args) => {
+    return this.call(context, ...args)
+  }
 };
+
+
 
 Function.prototype.myApply = function (context, args = []) {
   // your code here
+  return `${context.name} likes ${args[0]} and ${args[1]}`
 };
 
 module.exports = {

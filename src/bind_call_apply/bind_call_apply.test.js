@@ -59,8 +59,9 @@ describe("listHobbies", () => {
   });
 });
 
-describe.skip("Function.prototype.myBind", () => {
+describe("Function.prototype.myBind", () => {
   const funcThatNeedsThis = function (arg1, arg2) {
+    // this is going to be the chadObj
     return `${this.name} is ${arg1} and ${arg2}`;
   };
   it("returns a new function with `this` explicitly set", () => {
@@ -74,7 +75,7 @@ describe.skip("Function.prototype.myBind", () => {
   });
 });
 
-describe.skip("Function.prototype.myApply", () => {
+describe("Function.prototype.myApply", () => {
   const funcThatNeedsThis = function (arg1, arg2) {
     return `${this.name} likes ${arg1} and ${arg2}`;
   };
