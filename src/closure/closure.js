@@ -66,8 +66,7 @@ const personWithPrivateProperties = () => {
       return accountBalance
     },
     updateAccountBalance: (newBalance) => {
-      let accBalance = accountBalance
-      accountBalance = accBalance + newBalance
+      accountBalance += newBalance
     },
   };
 };
