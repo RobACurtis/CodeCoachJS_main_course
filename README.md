@@ -66,9 +66,9 @@ Here's the order I suggest you approach this material but feel free to jump arou
 
 ### Table Stakes
 
--   [ ] Prototypes
--   [ ] Bind, Call, Apply
--   [ ] Closure
+-   [x] Prototypes
+-   [x] Bind, Call, Apply
+-   [x] Closure
 
 ### ES6 and Beyond
 
