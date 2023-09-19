@@ -4,8 +4,12 @@
  * @param {number} initial initial num to start loop
  * @returns {iterator} ex: {value: 1, done: false}
  */
-function* forLoopGenerator(intial) {
-    // your code here
+function* forLoopGenerator(initial) {
+    let i = initial;
+    while(i) {
+        yield i;
+        i--;
+    }
 }
 
 /**
@@ -15,6 +19,9 @@ function* forLoopGenerator(intial) {
  */
 function* generateRandomId() {
     // your code here
+    while (true) {
+        yield Math.floor(Math.random() * 1000000);
+    }
 }
 
 module.exports = {
