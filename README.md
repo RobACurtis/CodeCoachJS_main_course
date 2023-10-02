@@ -73,8 +73,8 @@ Here's the order I suggest you approach this material but feel free to jump arou
 ### ES6 and Beyond
 
 -   [x] Map, Filter, Reduce
--   [ ] Generators
--   [ ] Async
+-   [x] Generators
+-   [x] Async
 -   [ ] Classes
 
 ### Event Handling
