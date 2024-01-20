@@ -1,9 +1,10 @@
+var shajs = require('sha.js')
 class Bank {
     /**
      * @returns {string} a unique string of any length
      */
     static createRoutingNumber() {
-        //TODO
+        return shajs('sha256').update(Math.random(30)).digest('hex')
     }
 
     constructor(initialAmt = 0) {
@@ -16,7 +17,10 @@ class Bank {
      * @returns {promise} updates the account with the new amount and resolves with the new account amount
      */
     deposit = (amt) => {
-        //TODO
+        return new Promise((resolve) => {
+            this.account += amt;
+            resolve(this.account);
+        });
     };
 
     /**
@@ -25,7 +29,14 @@ class Bank {
      * @returns {promise} rejects if the amount requested is more than what's available and resolves with the new account amount
      */
     withdraw = (amt) => {
-        //TODO
+        return new Promise((resolve, reject) => {
+            if (this.account >= amt){
+                this.account -= amt;
+                resolve(this.account);
+            } else {
+                reject(new Error("Insufficient Funds"));
+            }
+        });
     };
 
     /**
