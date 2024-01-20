@@ -14,5 +14,8 @@
 	"devDependencies": {
 		"eslint": "^8.43.0",
 		"jest": "^29.5.0"
+	},
+	"dependencies": {
+		"sha.js": "^2.4.11"
 	}
 }
