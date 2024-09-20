@@ -19,8 +19,17 @@
     .apple {
         background-color: green;
     }
+    .flex {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 </style>
 
+<div class="flex">
 <div id="grid"></div>
 <div style="margin-top: 20px">
     <button id="up">Up</button>
@@ -32,9 +41,10 @@
     <p>PTS:</p>
     <p id="pts"></p>
 </div>
+</div>
 
 <script>
-    /* 
+    /*
         TODO:
         Update the code here to make the snake game work
         The snake should be able to change directions
@@ -43,10 +53,19 @@
         Every time an apple is "eaten" - a point should be added to the score
         Starting the game over should reset the points, move the snake back to its original positions and clear all apples
     */
+   let gameStarted = false;
+   let gameText = gameStarted ? 'Start Game' : 'Start Over'
+
+    const updateGame = () => {
+        gameStarted = true
+    }
+
     const grid = document.getElementById('grid');
     let pts = 0;
-
+    let row = 0;
+    let snake = [0, 1, 2]
     const startGameBtn = document.getElementById('startGame');
+    startGameBtn.addEventListener('click', updateGame)
 
     const createBoard = () => {
         for (let i = 0; i < 100; i++) {
@@ -55,23 +74,38 @@
             grid.appendChild(div);
         }
     };
-    // create board
+
+    const removeBoard = () => {
+    const gridSpaces = document.querySelectorAll('.grid-space');
+    gridSpaces.forEach(space => space.remove());
+};
 
     startGameBtn.addEventListener('click', () => {
         // add your code here
+        if (gameStarted) {
+            removeBoard();
+        }
+        grid.innerHTML = "";
+        direction = "right";
+        pts = 0;
+        row = 0;
+        snake = [0, 1, 2];
         startGame();
+        updateGame();
     });
 
     const startGame = () => {
         createBoard();
 
         const allGridElems = document.querySelectorAll('.grid-space');
-
+        snake.forEach((s) => {
+            allGridElems[s].classList.add("snaky");
+        });
         // add any code you need to start the game
         // like setting the direction or helper functions to eat an apple
 
         const moveSnake = setInterval(() => {
-            // add code here to move snake
+
         }, 1000);
     };
 </script>
