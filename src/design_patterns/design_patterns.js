@@ -9,11 +9,16 @@ class PubSub {
   }
 
   subscribe(event, callback) {
-    // TODO: add the callback to the subscribers
+    if (!this.subscribers[event]) {
+      this.subscribers[event] = [];
+    }
+    this.subscribers[event].push(callback);
   }
 
   publish(event, data) {
-    // TODO: call the callback with the data
+    if (this.subscribers[event]) {
+      this.subscribers[event].forEach(callback => callback(data));
+    }
   }
 }
 
@@ -24,7 +29,17 @@ class PubSub {
  */
 class Singleton {
   constructor() {
-    // TODO: return the same instance
+    if (Singleton.instance) {
+      throw new Error("Cannot create another instance");
+    }
+    Singleton.instance = this;
+  }
+
+  static getInstance() {
+    if (!Singleton.instance) {
+      Singleton.instance = new Singleton();
+    }
+    return Singleton.instance;
   }
 }
 
