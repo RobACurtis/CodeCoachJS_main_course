@@ -83,8 +83,8 @@ Here's the order I suggest you approach this material but feel free to jump arou
 
 ### Time Tested Patterns
 
--   [ ] Design Patterns
--   [ ] Lodash Replica-Lite
+-   [x] Design Patterns
+-   [x] Lodash Replica-Lite
 -   [ ] Functional JS
 
 ### Big O and Intro to Sorting and Searching
