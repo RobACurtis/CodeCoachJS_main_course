@@ -89,7 +89,7 @@ Here's the order I suggest you approach this material but feel free to jump arou
 
 ### Big O and Intro to Sorting and Searching
 
--   [ ] Sorting and Searching Algos
+-   [x] Sorting and Searching Algos
 
 ### Data Structures
 
