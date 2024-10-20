@@ -1,6 +1,6 @@
 const { Trie } = require("./trie");
 
-describe.skip("Trie", () => {
+describe("Trie", () => {
   it("should insert a word", () => {
     const trie = new Trie();
     trie.insert("apple");
