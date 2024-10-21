@@ -1,6 +1,6 @@
 const { LinkedList } = require('./linked_list');
 
-describe.skip('linked list', () => {
+describe('linked list', () => {
 	it('can add nodes to the list', () => {
 		const ll = new LinkedList(4);
 
