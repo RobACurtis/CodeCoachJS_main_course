@@ -2,7 +2,7 @@ const { Graph } = require('./graphs.js');
 
 const graph = new Graph();
 
-describe.skip('graph', () => {
+describe('graph', () => {
     graph.addVertex('A');
     graph.addVertex('B');
     graph.addVertex('C');
