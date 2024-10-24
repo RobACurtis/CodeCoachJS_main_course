@@ -1,6 +1,6 @@
 const { Queue } = require('./queue');
 
-describe.skip('Queue', () => {
+describe('Queue', () => {
 	it('should enqueue an item', () => {
 		const queue = new Queue();
 		queue.enqueue(1);

@@ -96,7 +96,7 @@ Here's the order I suggest you approach this material but feel free to jump arou
 -   [x] Trees and tries
 -   [x] Linked Lists
 -   [x] Graphs
--   [ ] Stacks and Queues
+-   [x] Stacks and Queues
 
 ### To Understand Recursion... you must first understand recursion
 
