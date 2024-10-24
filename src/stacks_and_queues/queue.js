@@ -8,23 +8,29 @@ class Queue {
 	}
 
 	enqueue(item) {
-		// your code here
+		this.items.push(item)
 	}
 
 	dequeue() {
-		// your code here
+		if (this.isEmpty()) {
+			return "Queue is empty";
+		}
+		return this.items.shift();
 	}
 
 	front() {
-		// your code here
+		if (this.isEmpty()) {
+			return "Queue is empty";
+		}
+		return this.items[0];
 	}
 
 	isEmpty() {
-		// your code here
+		return this.items.length === 0;
 	}
 
 	size() {
-		// your code here
+		return this.items.length;
 	}
 }
 

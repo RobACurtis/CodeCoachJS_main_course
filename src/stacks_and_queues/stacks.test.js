@@ -1,6 +1,6 @@
 const { Stack } = require('./stacks');
 
-describe.skip('Stack', () => {
+describe('Stack', () => {
 	it('should push an item', () => {
 		const stack = new Stack();
 		stack.push(1);

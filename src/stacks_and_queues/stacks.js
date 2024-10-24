@@ -6,30 +6,43 @@ class Stack {
 		this.items = [];
 	}
 
+	// Add an item to the stack (top of the stack)
 	push(item) {
 		return this.items.push(item);
 	}
 
+	// Remove the top item from the stack
 	pop() {
-		// TODO
+		if (this.isEmpty()) {
+			return "Stack is empty";
+		}
+		return this.items.pop(); // Removes the last item
 	}
 
+	// View the top item of the stack without removing it
 	peek() {
-		// TODO
+		if (this.isEmpty()) {
+			return "Stack is empty";
+		}
+		return this.items[this.items.length - 1]; // Last item in the array
 	}
 
+	// Check if the stack is empty
 	isEmpty() {
-		// TODO
+		return this.items.length === 0;
 	}
 
+	// Get the size of the stack
 	size() {
-		// TODO
+		return this.items.length;
 	}
 
+	// Clear all items from the stack
 	clear() {
-		// TODO
+		this.items = [];
 	}
 
+	// Print the stack items
 	print() {
 		return this.items;
 	}
