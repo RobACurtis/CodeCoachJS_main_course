@@ -10,8 +10,17 @@
  * @returns {array} ex: [1,2,3,4,5]
  */
 const flattenArray = (arr, result = []) => {
-	// add your code here
+	if (arr.length === 0) return result;
+
+	if (Array.isArray(arr[0])) {
+		flattenArray(arr[0], result); // Recursively flatten the first element if it's an array
+	} else {
+		result.push(arr[0]); // Otherwise, append the element to result
+	}
+
+	return flattenArray(arr.slice(1), result); // Process the rest of the array
 };
+
 
 // console.log(flattenArray([1, [2, [3, [4, 5]]]])); // --> [1,2,3,4,5]
 
@@ -24,8 +33,14 @@ const flattenArray = (arr, result = []) => {
  */
 
 const fileExplorer = (obj, key) => {
-	// add your code here
-	// it should return false if the key cannot be found
+	for (const k in obj) {
+		if (k === key) return obj[k];
+		if (typeof obj[k] === 'object') {
+			const result = fileExplorer(obj[k], key);
+			if (result !== false) return result;
+		}
+	}
+	return false;
 };
 
 /**
@@ -35,20 +50,40 @@ const fileExplorer = (obj, key) => {
  * @returns {array} ex: [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]
  */
 const permutate = (nums = []) => {
-	// add your code here
-	// returns nested array of all possible permuations
+	if (nums.length === 0) return [[]];
+	if (nums.length === 1) return [nums];
+
+	const result = [];
+
+	for (let i = 0; i < nums.length; i++) {
+		// Take one element out
+		const currentNum = nums[i];
+		// Get the remaining elements
+		const remainingNums = nums.slice(0, i).concat(nums.slice(i + 1));
+		// Generate all permutations for the remaining elements
+		const remainingPermutations = permutate(remainingNums);
+
+		// Add the current number to each of the remaining permutations
+		for (const perm of remainingPermutations) {
+			result.push([currentNum, ...perm]);
+		}
+	}
+
+	return result;
 };
 
-/**
- * Returns an array of arrays with all possible subsets
- *
- * @param {array} nums ex: [1,2,3]
- * @returns {array} ex: [[], [1], [1,2], [1,3], [2], [2,3], [1,2,3]]
- */
 const subsets = (nums = []) => {
-	// add your code here
-	// returns nested array of all possible subsets
+    const result = [[]];
+
+    nums.forEach(num => {
+        result.forEach(subset => {
+            result.push([...subset, num]);
+        });
+    });
+
+    return result;
 };
+
 
 module.exports = {
 	flattenArray,

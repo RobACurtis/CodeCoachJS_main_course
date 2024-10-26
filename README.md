@@ -100,7 +100,7 @@ Here's the order I suggest you approach this material but feel free to jump arou
 
 ### To Understand Recursion... you must first understand recursion
 
--   [ ] Recursion in JS
+-   [x] Recursion in JS
 
 ## Common Approaches to JS problems
 
