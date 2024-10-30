@@ -1,6 +1,6 @@
 const { getMaxSumOfElementsInSubArray } = require("./sliding_window");
 
-describe.skip("Sliding Window", () => {
+describe("Sliding Window", () => {
   it("should return the max sum of a subarray of size k", () => {
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const k = 3;
