@@ -104,5 +104,5 @@ Here's the order I suggest you approach this material but feel free to jump arou
 
 ## Common Approaches to JS problems
 
--   [ ] Sliding Window
--   [ ] Frequency Counter
+-   [x] Sliding Window
+-   [x] Frequency Counter

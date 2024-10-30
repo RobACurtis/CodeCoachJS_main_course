@@ -4,8 +4,13 @@
  * @returns {object} an object with the key being the value and the value being the frequency {1: 2, 2: 1, 3: 1}
  */
 const countFrequency = (arr) => {
-  // add your code here
-  // returns an object with the frequency of each value in the array
+  const frequencyCounter = {};
+
+  for (let num of arr) {
+    frequencyCounter[num] = (frequencyCounter[num] || 0) + 1;
+  }
+
+  return frequencyCounter;
 };
 
 /**
@@ -15,8 +20,20 @@ const countFrequency = (arr) => {
  */
 
 const getDuplicates = (arr) => {
-  // add your code here
-  // returns an array of all the duplicate values in the array
+  const frequencyCounter = {};
+  const duplicates = [];
+
+  for (let num of arr) {
+    frequencyCounter[num] = (frequencyCounter[num] || 0) + 1;
+  }
+
+  for (let key in frequencyCounter) {
+    if (frequencyCounter[key] > 1) {
+      duplicates.push(Number(key));
+    }
+  }
+
+  return duplicates;
 };
 
 module.exports = {
